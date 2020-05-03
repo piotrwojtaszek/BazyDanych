@@ -30,6 +30,7 @@ public class LogIn : MonoBehaviour
         {
             DBMenager.username = nameField.text;
             DBMenager.score = int.Parse(www.text.Split('\t')[1]);
+            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
         {
