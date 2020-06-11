@@ -7,12 +7,15 @@ using TMPro;
 public class MainMenu : MonoBehaviour
 {
     public TextMeshProUGUI playerDisplay;
+    public GameObject m_quizCreatorButton;
     private void Start()
     {
-        if(DBMenager.LoggedIn)
+        if (DBMenager.LoggedIn)
         {
             playerDisplay.text = "Player: " + DBMenager.username;
+
         }
+        m_quizCreatorButton.SetActive(DBMenager.LoggedIn);
     }
     public void GoToRegister()
     {

@@ -6,15 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 2b41af60e31eb8b499fe592b31424a5b
-  - enabled: 1
-    path: Assets/Scenes/RegisterMenu.unity
+    path: Assets/Scenes/Temporary/RegisterMenu.unity
     guid: 00fd59eb9f794524e98217eb926c0ea5
   - enabled: 1
-    path: Assets/Scenes/LogInMenu.unity
+    path: Assets/Scenes/Temporary/LogInMenu.unity
     guid: 69edd23e9db2a5b4aa6ba1eab0fa9b8f
   - enabled: 1
-    path: Assets/Scenes/QuestionCreator.unity
-    guid: bf50f55369abb504aa8ef4c985441c84
+    path: Assets/Scenes/Final/MainMenu.unity
+    guid: bb99d2e85f571054d8bee14bf4bb3ad0
+  - enabled: 1
+    path: Assets/Scenes/Final/QuestionCreator.unity
+    guid: 903f8df368bd4e346848d6b145b120db
   m_configObjects: {}

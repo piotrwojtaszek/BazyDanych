@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class QuestionCreator : MonoBehaviour
 {
-    public TMP_InputField categoryField;
+    public TMP_Dropdown categoryField;
     public TMP_InputField contentField;
     public TMP_InputField timeField;
     public TMP_InputField correctField;
@@ -24,7 +24,7 @@ public class QuestionCreator : MonoBehaviour
     {
         WWWForm form = new WWWForm();
         form.AddField("username", DBMenager.username);
-        form.AddField("category", categoryField.text);
+        form.AddField("category", categoryField.options[categoryField.value].text);
         form.AddField("content", contentField.text);
         form.AddField("time", timeField.text);
         form.AddField("correct", correctField.text);
