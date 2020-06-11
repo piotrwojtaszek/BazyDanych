@@ -26,4 +26,9 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void GoToQustionCreator()
+    {
+        SceneManager.LoadScene("QuestionCreator");
+    }
 }

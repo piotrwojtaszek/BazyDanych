@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RegisterMenu.unity
     guid: 00fd59eb9f794524e98217eb926c0ea5
   - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: d25a14a353470284cb3466cdd849e119
-  - enabled: 1
     path: Assets/Scenes/LogInMenu.unity
     guid: 69edd23e9db2a5b4aa6ba1eab0fa9b8f
+  - enabled: 1
+    path: Assets/Scenes/QuestionCreator.unity
+    guid: bf50f55369abb504aa8ef4c985441c84
   m_configObjects: {}
