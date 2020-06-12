@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomQuestion : MonoBehaviour
 {
-    private IEnumerator Start()
+    public IEnumerator Generator()
     {
         WWW www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php");
         yield return www;

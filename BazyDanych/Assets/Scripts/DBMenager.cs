@@ -10,6 +10,8 @@ public static class DBMenager
 
     public static void LogOut()
     {
+        PlayerPrefs.DeleteKey("username");
+        PlayerPrefs.DeleteKey("password");
         username = null;
     }
 }

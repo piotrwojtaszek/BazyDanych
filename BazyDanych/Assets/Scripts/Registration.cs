@@ -27,6 +27,8 @@ public class Registration : MonoBehaviour
         yield return www;
         if(www.text=="0")
         {
+            PlayerPrefs.SetString("username", nameField.text);
+            PlayerPrefs.SetString("password", passwordField.text);
             Debug.Log("User created successfully!");
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }

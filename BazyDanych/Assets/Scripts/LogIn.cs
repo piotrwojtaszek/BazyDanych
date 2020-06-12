@@ -29,6 +29,8 @@ public class LogIn : MonoBehaviour
         if (www.text[0] == '0')
         {
             DBMenager.username = nameField.text;
+            PlayerPrefs.SetString("username", nameField.text);
+            PlayerPrefs.SetString("password", passwordField.text);
             UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
         }
         else
