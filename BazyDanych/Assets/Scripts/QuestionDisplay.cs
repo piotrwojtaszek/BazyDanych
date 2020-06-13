@@ -18,22 +18,19 @@ public class QuestionDisplay : MonoBehaviour
     public TextMeshProUGUI m_b;
     public TextMeshProUGUI m_c;
     public TextMeshProUGUI m_d;
-
+    public string m_correct;
     public Image m_left;
     public Image m_right;
-
+    public string m_idq;
     public string[] questionDetails;
-
-    private float m_currTime = 0f;
     private float m_maxTime = 0f;
+    IEnumerator m_corutin;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(Generator());
-
-
-
     }
+
     public IEnumerator Generator()
     {
         WWW www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php");
@@ -43,28 +40,35 @@ public class QuestionDisplay : MonoBehaviour
             questionDetails = www.text.Split('\t');
             for (int i = 0; i < questionDetails.Length; i++)
             {
-                Debug.Log(questionDetails[i]);
+                //Debug.Log(questionDetails[i]);
             }
+            Debug.Log("IDQ: " + questionDetails[1]);
+            Debug.Log("CORRECT: " + questionDetails[6]);
+            m_idq = questionDetails[1];
 
             m_maxTime = int.Parse(questionDetails[3]);
 
             m_content.text = questionDetails[5];
+            m_correct = questionDetails[6];
             m_a.text = questionDetails[7];
             m_b.text = questionDetails[8];
             m_c.text = questionDetails[9];
             m_d.text = questionDetails[10];
 
-            StartCoroutine(TimeCounter());
+
         }
         else
         {
-            Debug.Log("Coś poszło nie tak :( ");
+            Debug.Log("Downloading question goes wrong");
         }
+        StopAllCoroutines();
+        StartCoroutine(TimeCounter());
 
     }
 
     public IEnumerator TimeCounter()
     {
+        float m_currTime = 0f;
         while (m_currTime <= m_maxTime)
         {
 
@@ -74,6 +78,7 @@ public class QuestionDisplay : MonoBehaviour
             m_right.fillAmount = 1f - m_currTime / m_maxTime;
             yield return null;
         }
+        GetComponent<AnswerQuestion>().SetAnswer("e");
 
     }
 

@@ -34,6 +34,12 @@ public class MainMenu : MonoBehaviour
     public void LogOut()
     {
         DBMenager.LogOut();
+        //Application.Quit();
+        StartCoroutine(AutoLogIn());
+    }
+
+    public void QuitApplication()
+    {
         Application.Quit();
     }
 
@@ -70,6 +76,10 @@ public class MainMenu : MonoBehaviour
         {
             playerDisplay.text = "Player: " + DBMenager.username;
 
+        }
+        else
+        {
+            playerDisplay.text = "No user logged in";
         }
         m_quizCreatorButton.SetActive(DBMenager.LoggedIn);
         m_playGameButton.SetActive(DBMenager.LoggedIn);
