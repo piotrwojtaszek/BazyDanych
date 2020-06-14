@@ -33,17 +33,46 @@ public class QuestionDisplay : MonoBehaviour
 
     public IEnumerator Generator()
     {
-        WWW www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php");
+        WWW www;
+        www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php");
         yield return www;
+
+        while (true)
+        {
+            if (www.text[0] == '0')
+            {
+                questionDetails = www.text.Split('\t');
+
+                if (GameMenager.Instance.IsNotRepeating(questionDetails[1]) == false)
+                {
+                    GameMenager.Instance.AddCurrentQuestionToList(questionDetails[1]);
+                    Debug.Log("Powtorzenie");
+                }
+                else
+                {
+                    GameMenager.Instance.AddCurrentQuestionToList(questionDetails[1]);
+                    break;
+                }
+
+            }
+        }
+
         if (www.text[0] == '0')
         {
-            questionDetails = www.text.Split('\t');
+            /*questionDetails = www.text.Split('\t');
+
+            if (GameMenager.Instance.IsNotRepeating(questionDetails[1]) == false)
+            {
+                Debug.Log("Powtorzenie");
+            }
+            GameMenager.Instance.AddCurrentQuestionToList(questionDetails[1]);*/
+
             for (int i = 0; i < questionDetails.Length; i++)
             {
                 //Debug.Log(questionDetails[i]);
             }
-            Debug.Log("IDQ: " + questionDetails[1]);
-            Debug.Log("CORRECT: " + questionDetails[6]);
+            //Debug.Log("IDQ: " + questionDetails[1]);
+            //Debug.Log("CORRECT: " + questionDetails[6]);
             m_idq = questionDetails[1];
 
             m_maxTime = int.Parse(questionDetails[3]);

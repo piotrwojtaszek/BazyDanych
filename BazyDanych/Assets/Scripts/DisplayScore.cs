@@ -18,4 +18,11 @@ public class DisplayScore : MonoBehaviour
         m_scoreText.text = m_score.ToString();
     }
 
+    public void BackToMainMenu()
+    {
+        GameMenager.Instance.ResetAnswered();
+        GameMenager.Instance.ClearQuizList();
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
+
 }

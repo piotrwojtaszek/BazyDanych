@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using UnityEngine;
 
 public class GameMenager : MonoBehaviour
 {
     public int m_currentAnswered = 0;
     public int m_goodAnsewers = 0;
+
+    private List<string> m_questionsInCurrentQuiz = new List<string>();
 
     public static GameMenager Instance;
 
@@ -25,7 +28,7 @@ public class GameMenager : MonoBehaviour
     public void AddAnswered()
     {
         m_currentAnswered++;
-        if (m_currentAnswered==5)
+        if (m_currentAnswered == 5)
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene("EndScore");
         }
@@ -37,6 +40,35 @@ public class GameMenager : MonoBehaviour
 
     public void ResetAnswered()
     {
+        m_goodAnsewers = 0;
         m_currentAnswered = 0;
     }
+
+    public void AddCurrentQuestionToList(string idq)
+    {
+        m_questionsInCurrentQuiz.Add(idq);
+    }
+
+    public void DeleteKeyFromQuestionList(string idq)
+    {
+        m_questionsInCurrentQuiz.Remove(idq);
+    }
+
+    public bool IsNotRepeating(string idq)
+    {
+        if(m_questionsInCurrentQuiz.Count==0)
+        {
+            return true;
+        }
+        if (m_questionsInCurrentQuiz.Contains(idq))
+            return false;
+
+        return true;
+    }
+
+    public void ClearQuizList()
+    {
+        m_questionsInCurrentQuiz.Clear();
+    }
+
 }

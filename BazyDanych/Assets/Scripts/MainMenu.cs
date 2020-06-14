@@ -59,7 +59,6 @@ public class MainMenu : MonoBehaviour
         {
             if (PlayerPrefs.HasKey("username"))
             {
-                Debug.Log("AutoLogin");
                 WWWForm form = new WWWForm();
 
                 form.AddField("name", PlayerPrefs.GetString("username"));
