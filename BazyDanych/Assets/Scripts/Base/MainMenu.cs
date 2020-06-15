@@ -55,7 +55,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToProfile()
     {
-        SceneManager.LoadScene("Ranking");
+        SceneManager.LoadScene("ProfileMenu");
     }
 
     public IEnumerator AutoLogIn()

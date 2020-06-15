@@ -519,8 +519,8 @@ MonoBehaviour:
   m_logInButton: {fileID: 1317999590}
   m_registerButton: {fileID: 924346283}
   m_logOutButton: {fileID: 759461354}
-  m_rankingButton: {fileID: 0}
-  m_profileButton: {fileID: 0}
+  m_rankingButton: {fileID: 170879125}
+  m_profileButton: {fileID: 1689063771}
 --- !u!1 &605104204
 GameObject:
   m_ObjectHideFlags: 0
