@@ -12,15 +12,11 @@ public class MainMenu : MonoBehaviour
     public GameObject m_logInButton;
     public GameObject m_registerButton;
     public GameObject m_logOutButton;
-
+    public GameObject m_rankingButton;
+    public GameObject m_profileButton;
     private void Start()
     {
-
-
-
         StartCoroutine(AutoLogIn());
-
-
     }
     public void GoToRegister()
     {
@@ -34,7 +30,6 @@ public class MainMenu : MonoBehaviour
     public void LogOut()
     {
         DBMenager.LogOut();
-        //Application.Quit();
         StartCoroutine(AutoLogIn());
     }
 
@@ -90,9 +85,12 @@ public class MainMenu : MonoBehaviour
         {
             playerDisplay.text = "No user logged in";
         }
+
         m_quizCreatorButton.SetActive(DBMenager.LoggedIn);
         m_playGameButton.SetActive(DBMenager.LoggedIn);
+        m_rankingButton.SetActive(DBMenager.LoggedIn);
         m_logOutButton.SetActive(DBMenager.LoggedIn);
+        m_profileButton.SetActive(DBMenager.LoggedIn);
         m_logInButton.SetActive(!DBMenager.LoggedIn);
         m_registerButton.SetActive(!DBMenager.LoggedIn);
     }

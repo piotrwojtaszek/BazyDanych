@@ -429,14 +429,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 855c475717dbcac4babcc7a312b65f17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_username: 
-  m_odpowiedzi: 
-  m_poprawne: 
-  "m_trafno\u015B\u0107": 
   m_usernameText: {fileID: 6599605148461223165}
   m_odpowiedziText: {fileID: 6599605149397858825}
   m_poprawneText: {fileID: 6599605148657542534}
   m_trafnoscText: {fileID: 6599605149253328348}
+  m_baseColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_userColor:
+    serializedVersion: 2
+    rgba: 4278220031
 --- !u!1 &6599605149253328350
 GameObject:
   m_ObjectHideFlags: 0
