@@ -33,8 +33,12 @@ public class QuestionDisplay : MonoBehaviour
 
     public IEnumerator Generator()
     {
+        WWWForm form = new WWWForm();
+
+        form.AddField("name", DBMenager.username);
+
         WWW www;
-        www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php");
+        www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php",form);
         yield return www;
 
         while (true)
@@ -45,7 +49,7 @@ public class QuestionDisplay : MonoBehaviour
 
                 if (GameMenager.Instance.IsNotRepeating(questionDetails[1]) == false)
                 {
-                    www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php");
+                    www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php",form);
                     yield return www;
                     Debug.Log("Powtorzenie");
                 }

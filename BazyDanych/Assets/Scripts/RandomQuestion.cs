@@ -6,7 +6,12 @@ public class RandomQuestion : MonoBehaviour
 {
     public IEnumerator Generator()
     {
-        WWW www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php");
+        WWWForm form = new WWWForm();
+
+        form.AddField("name", DBMenager.username);
+
+        WWW www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php",form);
+        
         yield return www;
         if (www.text[0] == '0')
         {
