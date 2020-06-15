@@ -45,7 +45,7 @@ public class MainMenu : MonoBehaviour
 
     public void GoToGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("CategoryPicker");
     }
 
     public void GoToQustionCreator()

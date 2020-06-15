@@ -6,7 +6,7 @@ public class GameMenager : MonoBehaviour
 {
     public int m_currentAnswered = 0;
     public int m_goodAnsewers = 0;
-
+    public string m_currentCategory = "";
     private List<string> m_questionsInCurrentQuiz = new List<string>();
 
     public static GameMenager Instance;
@@ -32,6 +32,7 @@ public class GameMenager : MonoBehaviour
             UnityEngine.SceneManagement.SceneManager.LoadScene("EndScore");
         }
     }
+
     public void GoodAnswer()
     {
         m_goodAnsewers++;
@@ -69,5 +70,16 @@ public class GameMenager : MonoBehaviour
     {
         m_questionsInCurrentQuiz.Clear();
     }
+
+    public void SetCurrentCategory(string s)
+    {
+        m_currentCategory = s;
+    }
+
+    public string GetCurrentCategory()
+    {
+        return m_currentCategory;
+    }
+
 
 }

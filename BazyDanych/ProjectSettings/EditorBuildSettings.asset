@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Final/QuestionCreator.unity
     guid: 903f8df368bd4e346848d6b145b120db
   - enabled: 1
+    path: Assets/Scenes/Final/CategoryPicker.unity
+    guid: ba17bd8d95a9e8844ad27cae858a1e7b
+  - enabled: 1
     path: Assets/Scenes/Final/Game.unity
     guid: fe2c98f906603f04a8d0e7c0c5951acf
   - enabled: 1

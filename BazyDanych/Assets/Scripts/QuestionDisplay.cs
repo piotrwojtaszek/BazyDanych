@@ -36,7 +36,7 @@ public class QuestionDisplay : MonoBehaviour
         WWWForm form = new WWWForm();
 
         form.AddField("name", DBMenager.username);
-
+        form.AddField("category", GameMenager.Instance.GetCurrentCategory());
         WWW www;
         www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php",form);
         yield return www;
