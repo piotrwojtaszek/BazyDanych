@@ -33,6 +33,7 @@ public class QuestionDisplay : MonoBehaviour
 
     public IEnumerator Generator()
     {
+        int loopCount = 0;
         WWWForm form = new WWWForm();
 
         form.AddField("name", DBMenager.username);
@@ -46,12 +47,18 @@ public class QuestionDisplay : MonoBehaviour
             if (www.text[0] == '0')
             {
                 questionDetails = www.text.Split('\t');
-
+                
                 if (GameMenager.Instance.IsNotRepeating(questionDetails[1]) == false)
                 {
+                    loopCount++;
+                    if (loopCount >= 8)
+                    {
+                        GameMenager.Instance.DeleteKey(0);
+                        loopCount = 0;
+                    }
                     www = new WWW("http://zaliczeniesqlunity.5v.pl/randomQuestion.php",form);
                     yield return www;
-                    Debug.Log("Powtorzenie");
+                    Debug.Log("Powtorzenie numer: "+loopCount);
                 }
                 else
                 {

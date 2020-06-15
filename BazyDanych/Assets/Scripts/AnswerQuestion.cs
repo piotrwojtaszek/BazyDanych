@@ -35,7 +35,7 @@ public class AnswerQuestion : MonoBehaviour
 
         if (www.text == "0")
         {
-            Debug.Log("Udało się dodać do historii");
+
 
         }
         else

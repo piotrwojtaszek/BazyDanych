@@ -53,6 +53,16 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene("QuestionCreator");
     }
 
+    public void GoToRank()
+    {
+        SceneManager.LoadScene("Ranking");
+    }
+
+    public void GoToProfile()
+    {
+        SceneManager.LoadScene("Ranking");
+    }
+
     public IEnumerator AutoLogIn()
     {
         if (!DBMenager.LoggedIn)

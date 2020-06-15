@@ -71,6 +71,11 @@ public class GameMenager : MonoBehaviour
         m_questionsInCurrentQuiz.Clear();
     }
 
+    public void DeleteKey(int id)
+    {
+        m_questionsInCurrentQuiz.RemoveAt(id);
+    }
+
     public void SetCurrentCategory(string s)
     {
         m_currentCategory = s;
