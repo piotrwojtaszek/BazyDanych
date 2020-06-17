@@ -7,8 +7,8 @@ public class QuestionCreator : MonoBehaviour
 {
     public TMP_Dropdown categoryField;
     public TMP_InputField contentField;
-    public TMP_InputField timeField;
-    public TMP_InputField correctField;
+    public TMP_Dropdown timeField;
+    public TMP_Dropdown correctField;
     public TMP_InputField aField;
     public TMP_InputField bField;
     public TMP_InputField cField;
@@ -26,8 +26,8 @@ public class QuestionCreator : MonoBehaviour
         form.AddField("username", DBMenager.username);
         form.AddField("category", categoryField.options[categoryField.value].text);
         form.AddField("content", contentField.text);
-        form.AddField("time", timeField.text);
-        form.AddField("correct", correctField.text);
+        form.AddField("time", timeField.options[timeField.value].text);
+        form.AddField("correct", correctField.options[correctField.value].text);
         form.AddField("aa", aField.text);
         form.AddField("ab", bField.text);
         form.AddField("ac", cField.text);
@@ -50,5 +50,10 @@ public class QuestionCreator : MonoBehaviour
     public void VerifyInputs()
     {
         submitButton.interactable = (contentField.text.Length >= 2);
+    }
+
+    public void GoToMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }

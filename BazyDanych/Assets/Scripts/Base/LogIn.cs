@@ -43,4 +43,9 @@ public class LogIn : MonoBehaviour
     {
         submitButton.interactable = (nameField.text.Length >= 4 && passwordField.text.Length >= 8);
     }
+
+    public void GoToMenu()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+    }
 }
